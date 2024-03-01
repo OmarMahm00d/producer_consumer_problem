@@ -60,6 +60,7 @@ void producer(int newProduct, int p_id) {
                     lock_guard<mutex> cout_lock(cout_mutex); // Lock cout
                     cout << "process " << p_id << " entered the critical section" << endl;
                 }
+				cout << "process " << p_id << " is performing operation on the critical section" << endl;
                 count++;
             }
             {
@@ -93,6 +94,7 @@ void consumer(int p_id) {
                     lock_guard<mutex> cout_lock(cout_mutex); // Lock cout
                     cout << "process " << p_id << " entered the critical section" << endl;
                 }
+				cout << "process " << p_id << " is performing operation on the critical section" << endl;
                 count--;
             }
             {
